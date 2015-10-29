@@ -1,16 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	
+</h:head>
+<h:body>
+	<h:form id="form">
+		<h1>
+			<h:outputText value="JavaBeat JSF 2.2 Examples" />
+		</h1>
+		<h2>
+			<h:outputText value="JSF2 Form Example" />
+		</h2>
+		<h:outputText value="Enter Greeting Message : " />
+		<h:inputText id="input" value="#{indexBean.userInput}" />
+		<h:commandButton value="Submit" action="#{indexBean.submit}" onclick="return check();"/>
+		<h:outputText value="#{indexBean.userInput}"/>
+	</h:form>
+</h:body>
 </html>
