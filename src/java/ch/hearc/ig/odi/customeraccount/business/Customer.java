@@ -23,6 +23,34 @@ public class Customer {
         this.accList = new ArrayList();
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<Account> getAccList() {
+        return accList;
+    }
+
+    public void setAccList(List<Account> accList) {
+        this.accList = accList;
+    }
+
     /**
      *
      * @param number
