@@ -46,6 +46,10 @@ public class Bank {
         }
         return null;
     }
+    
+    public HashSet<Customer> getCustomers(){
+        return this.customers;
+    }
 
     /**
      *
@@ -53,9 +57,10 @@ public class Bank {
      * @param fn
      * @param ln
      */
-    public void addCustomer(int number, String fn, String ln) {
+    public Customer addCustomer(int number, String fn, String ln) {
         Customer customer = new Customer(number, fn, ln);
         this.customers.add(customer);
+        return customer;
     }
 
     /**

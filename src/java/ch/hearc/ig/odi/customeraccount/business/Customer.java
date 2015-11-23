@@ -16,6 +16,7 @@ public class Customer {
      * @param firstName
      * @param lastName
      */
+
     public Customer(Integer number, String firstName, String lastName) {
         this.number = number;
         this.firstName = firstName;
