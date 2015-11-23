@@ -15,7 +15,7 @@
                     prénom : <h:inputText   id="inputPrenom"   value="#{customerCreateBean.lastName}" required="true" requiredMessage="Prénom obligatoire"/>
                     <br/>
                     <br/>
-                    <h:commandButton type="submit" value="créer client" action="createCustomerOk.xhtml"/> 
+                    <h:commandButton type="submit" value="créer client" actionListener="#{customerCreateBean.newCustomer}" action="createCustomerOk.xhtml"/> 
                     <br/>
                 </h:form>
             </h:panelGrid>

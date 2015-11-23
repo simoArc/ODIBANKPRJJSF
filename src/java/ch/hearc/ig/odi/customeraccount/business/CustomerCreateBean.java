@@ -27,7 +27,7 @@ public class CustomerCreateBean {
     public CustomerCreateBean() {
     }
     
-    public void setNewCustomer(){
+    public void newCustomer(){
         services.saveCustomer(this.number, this.firstName, this.lastName);
     }
 
