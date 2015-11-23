@@ -6,11 +6,8 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
 import ch.hearc.ig.odi.customeraccount.service.Services;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -29,20 +26,16 @@ public class CustomerBean{
 
     @Inject
     Services services;
-
-    //constructeur vide ou plein?
-    public CustomerBean(int number, String firstName, String lastName, List<Account> accList, Services services) {
-        this.number = number;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.accList = accList;
-        this.services = services;
-    } 
-
-
+    public CustomerBean() {
+    }
+  
     public List<Customer> getCustomers() {
         return services.getCustomersList();
     }
+    
+   /* public Customer getCustomerId(){
+        return services.getCustomer(1);
+    }*/
 
     public int getNumber() {
         return number;

@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Bank {
 
-    Map<Integer, Customer> customers;
-    HashSet<Account> accounts;
+    HashMap<Integer, Customer> customers = new HashMap();
+    HashSet<Account> accounts = new HashSet();
     private int number;
     private String name;
 
@@ -60,6 +60,7 @@ public class Bank {
     public Customer addCustomer(int number, String fn, String ln) {
         Customer customer = new Customer(number, fn, ln);
         this.customers.put(number, customer);
+        System.out.println(customers.get(number).getFirstName());
         return customer;
     }
 
