@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -19,29 +20,22 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class CustomerBean implements Serializable {
+public class CustomerBean{
 
     private int number;
     private String firstName;
     private String lastName;
     private List<Account> accList;
 
-   // private ArrayList<Customer> customersList = new ArrayList();
-
     @Inject
     Services services;
 
-    public CustomerBean(Integer number, String firstName, String lastName) {
-        this.number = number;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.accList = new ArrayList();
+    public CustomerBean() {
+        
     }
 
     public List<Customer> getCustomers() {
         return services.getCustomersList();
-        //customersList.addAll(services.getCustomersList());
-        //return customersList;
     }
 
     public int getNumber() {
