@@ -30,9 +30,15 @@ public class CustomerBean{
     @Inject
     Services services;
 
-    public CustomerBean() {
-        
-    }
+    //constructeur vide ou plein?
+    public CustomerBean(int number, String firstName, String lastName, List<Account> accList, Services services) {
+        this.number = number;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accList = accList;
+        this.services = services;
+    } 
+
 
     public List<Customer> getCustomers() {
         return services.getCustomersList();

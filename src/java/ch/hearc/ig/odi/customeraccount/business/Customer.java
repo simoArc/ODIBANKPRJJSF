@@ -24,6 +24,9 @@ public class Customer {
         this.accList = new ArrayList();
     }
 
+    public Customer() {
+    }
+
     public int getNumber() {
         return number;
     }
