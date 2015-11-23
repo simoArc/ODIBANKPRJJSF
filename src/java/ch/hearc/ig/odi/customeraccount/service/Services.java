@@ -57,8 +57,7 @@ public class Services implements Serializable{
      * @return Une Map contenant tous les clients de la banqe
      */
     public Map<Integer, Customer> getCustomers(){
-        return null;
-       // return bank.getCustomers();
+        return bank.getCustomers();
     }
     
     /**

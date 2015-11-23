@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Bank {
 
-    HashSet<Customer> customers;
+    Map<Integer, Customer> customers;
     HashSet<Account> accounts;
     private int number;
     private String name;
@@ -38,7 +38,7 @@ public class Bank {
      * @param number
      */
     public Customer getCustomerByNumber(int number) {        
-        for(Customer lisCustomers : this.customers){
+        for(Customer lisCustomers : this.customers.values()){
             if(lisCustomers.getNumber() == number){
                Customer customer = lisCustomers;
                return customer;
@@ -47,7 +47,7 @@ public class Bank {
         return null;
     }
     
-    public HashSet<Customer> getCustomers(){
+    public Map<Integer, Customer> getCustomers(){
         return this.customers;
     }
 
@@ -59,7 +59,7 @@ public class Bank {
      */
     public Customer addCustomer(int number, String fn, String ln) {
         Customer customer = new Customer(number, fn, ln);
-        this.customers.add(customer);
+        this.customers.put(number, customer);
         return customer;
     }
 
