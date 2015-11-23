@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="en">
+        <h:head>
+            <title>Créer client</title>
+        </h:head>
+        <h:body>
+            <h:panelGrid id="panel" columns="2" border="0" cellpadding="0" cellspacing="2">
+                <h:form>
+                    Numero : <h:inputText   id="inputNumero"      value="#{customerCreateBean.number}"    required="true" requiredMessage="Numero obligatoire"/>
+                    nom : <h:inputText   id="inputNom"      value="#{customerCreateBean.firstName}"    required="true" requiredMessage="Nom obligatoire"/>
+                    prénom : <h:inputText   id="inputPrenom"   value="#{customerCreateBean.lastName}" required="true" requiredMessage="Prénom obligatoire"/>
+                    <br/>
+                    <br/>
+                    <h:commandButton type="submit" value="créer client" action="#{customerCreateBean.newCustomer("inputNumero", "inputNom", "inputPrenom")}"/> 
+                    <br/>
+                </h:form>
+            </h:panelGrid>
+        </h:body>
+    </f:view>
+</html>
