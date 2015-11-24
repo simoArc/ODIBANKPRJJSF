@@ -17,7 +17,7 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class CustomerBean {
+public class CustomerEditBean {
 
     private int number;
     private String firstName;
@@ -27,22 +27,15 @@ public class CustomerBean {
     @Inject
     Services services;
 
-    public CustomerBean() {
+    public CustomerEditBean() {
+
     }
 
-    public List<Customer> getCustomers() {
-        return services.getCustomersList();
+    public Customer getCustomer() {
+        CustomerBean customerBean = new CustomerBean();
+        return customerBean.getCustomerById(customerBean.getNumber());
     }
-    
-    public Customer getCustomerById(Integer numberCustomer){
-        return services.getCustomer(numberCustomer);
-    }
-    
-    
 
-    /* public Customer getCustomerId(){
-     return services.getCustomer(1);
-     }*/
     public int getNumber() {
         return number;
     }
@@ -67,4 +60,13 @@ public class CustomerBean {
         this.lastName = lastName;
     }
 
+    public List<Account> getAccList() {
+        return accList;
+    }
+
+    public void setAccList(List<Account> accList) {
+        this.accList = accList;
+    }
+
+    
 }

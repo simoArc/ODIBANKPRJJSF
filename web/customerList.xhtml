@@ -7,20 +7,24 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:dataTable value="#{customerBean.customers}" var="customer">
-            <h:column>    				
-                <f:facet name="header">Numero</f:facet>    				
-                    #{customer.number}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Nom</f:facet>
-                    #{customer.lastName}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Prénom</f:facet>
-                    #{customer.firstName}
-            </h:column>
-        </h:dataTable>
+        <h:form>
+            <h:dataTable value="#{customerBean.customers}" var="customer">
+                <h:column>    				
+                    <f:facet name="header">Numero</f:facet>    				
+                    <h:commandLink id="idLink" action="CustomerDetails.xhtml" >
+                        <h:outputText value ="#{customer.number}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                        #{customer.lastName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prénom</f:facet>
+                        #{customer.firstName}
+                </h:column>
+            </h:dataTable>
+        </h:form>
         <a href="createCustomer.xhtml"><h:button value="Ajouter client" /></a> 
     </h:body>
 </html>
