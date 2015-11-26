@@ -33,16 +33,16 @@ public class CustomerBean {
     public List<Customer> getCustomers() {
         return services.getCustomersList();
     }
-    
-    public Customer getCustomerById(Integer numberCustomer){
+
+    public Customer getCustomerById(Integer numberCustomer) {
         return services.getCustomer(numberCustomer);
     }
-    
-    
 
-    /* public Customer getCustomerId(){
-     return services.getCustomer(1);
-     }*/
+    public void editCustomer(Integer number) {
+        CustomerEditBean customerEdit = FindBean.FindBean("CustomerEditBean", CustomerEditBean.class);
+        customerEdit.setCustomer(services.getCustomer(number));
+    }
+
     public int getNumber() {
         return number;
     }

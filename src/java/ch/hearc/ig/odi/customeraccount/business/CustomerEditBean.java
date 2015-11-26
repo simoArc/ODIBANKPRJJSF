@@ -31,9 +31,11 @@ public class CustomerEditBean {
 
     }
 
-    public Customer getCustomer() {
-        CustomerBean customerBean = new CustomerBean();
-        return customerBean.getCustomerById(customerBean.getNumber());
+    
+    public void setCustomer(Customer customer){
+        this.number = customer.getNumber();
+        this.firstName = customer.getFirstName();
+        this.lastName = customer.getLastName();
     }
 
     public int getNumber() {

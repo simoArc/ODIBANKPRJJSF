@@ -8,7 +8,7 @@
     </h:head>
     <h:body>
         Détails du client
-        <h:dataTable value="#{customerEditBean.customer}" var="customer">
+        <h:dataTable value="#{customerEditBean}" var="customer">
             <h:column>    				
                 <f:facet name="header">Numero</f:facet>    				
                     #{customer.number}
