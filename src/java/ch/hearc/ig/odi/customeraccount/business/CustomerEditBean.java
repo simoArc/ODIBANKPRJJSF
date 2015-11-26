@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
 import ch.hearc.ig.odi.customeraccount.service.Services;
+import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -15,14 +16,18 @@ import javax.inject.Named;
  *
  * @author Simone Bissolotti
  */
-@Named
+@Named(value = "customerEditBean")
 @RequestScoped
 public class CustomerEditBean {
 
     private int number;
     private String firstName;
     private String lastName;
-    private List<Account> accList;
+    private ArrayList<Account> accList;
+    private int numberAcount;
+    private String nameAccount;
+    private double balance = 0;
+    private double rate = 0.001;
 
     @Inject
     Services services;
@@ -31,11 +36,17 @@ public class CustomerEditBean {
 
     }
 
-    
-    public void setCustomer(Customer customer){
+    public void setCustomer(Customer customer) {
+        accList = new ArrayList();
         this.number = customer.getNumber();
         this.firstName = customer.getFirstName();
         this.lastName = customer.getLastName();
+        this.accList = customer.getAccList();
+        int var = accList.size();
+    }
+
+    public ArrayList<Account> getAccounts() {
+        return accList;
     }
 
     public int getNumber() {
@@ -66,9 +77,40 @@ public class CustomerEditBean {
         return accList;
     }
 
-    public void setAccList(List<Account> accList) {
+    public void setAccList(ArrayList<Account> accList) {
         this.accList = accList;
     }
 
-    
+    public int getNumberAcount() {
+        return numberAcount;
+    }
+
+    public void setNumberAcount(int numberAcount) {
+        this.numberAcount = numberAcount;
+    }
+
+    public String getNameAccount() {
+        return nameAccount;
+    }
+
+    public void setNameAccount(String nameAccount) {
+        this.nameAccount = nameAccount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
 }

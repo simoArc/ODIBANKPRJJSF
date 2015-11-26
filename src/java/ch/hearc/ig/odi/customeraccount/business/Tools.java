@@ -15,14 +15,8 @@ import javax.inject.Named;
  *
  * @author Simone Bissolotti
  */
-@Named
-@RequestScoped
-public class FindBean{
 
-    @Inject
-    Services services;
-    public FindBean() {
-    }
+public class Tools{
 
     public static <T> T FindBean(String mangedBeanName, Class<T> beanClass) {
         FacesContext context = FacesContext.getCurrentInstance();

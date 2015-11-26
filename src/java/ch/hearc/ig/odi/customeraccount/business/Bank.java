@@ -73,6 +73,7 @@ public class Bank {
      */
     public void addAccount(String number, String name, double rate, Customer customer) {
         Account account = new Account(number, name, rate, customer);
+        getCustomerByNumber(customer.getNumber()).setAccList(account);
         this.accounts.add(account);
     }
 

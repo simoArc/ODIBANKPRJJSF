@@ -9,4 +9,13 @@
         <managed-bean-class>ch.hearc.ig.odi.customeraccount</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    
+    <navigation-rule>
+        <from-view-id>/customerList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/CustomerDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 </faces-config>

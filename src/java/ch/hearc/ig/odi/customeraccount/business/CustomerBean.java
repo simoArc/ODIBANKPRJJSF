@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
 import ch.hearc.ig.odi.customeraccount.service.Services;
+import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -22,7 +23,7 @@ public class CustomerBean {
     private int number;
     private String firstName;
     private String lastName;
-    private List<Account> accList;
+    private ArrayList<Account> accList;
 
     @Inject
     Services services;
@@ -38,9 +39,10 @@ public class CustomerBean {
         return services.getCustomer(numberCustomer);
     }
 
-    public void editCustomer(Integer number) {
-        CustomerEditBean customerEdit = FindBean.FindBean("CustomerEditBean", CustomerEditBean.class);
+    public String editCustomer(Integer number) {
+        CustomerEditBean customerEdit = Tools.FindBean("customerEditBean", CustomerEditBean.class);
         customerEdit.setCustomer(services.getCustomer(number));
+        return "success";
     }
 
     public int getNumber() {
@@ -66,5 +68,14 @@ public class CustomerBean {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public ArrayList<Account> getAccList() {
+        return accList;
+    }
+
+    public void setAccList(ArrayList<Account> accList) {
+        this.accList = accList;
+    }
+    
 
 }
