@@ -8,17 +8,19 @@
             <title>Créer client</title>
         </h:head>
         <h:body>
-            <h:panelGrid id="panel" columns="2" border="0" cellpadding="0" cellspacing="2">
-                <h:form>
-                    Numero : <h:inputText   id="inputNumero"      value="#{customerCreateBean.number}"    required="true" requiredMessage="Numero obligatoire"/>
-                    nom : <h:inputText   id="inputNom"      value="#{customerCreateBean.firstName}"    required="true" requiredMessage="Nom obligatoire"/>
-                    prénom : <h:inputText   id="inputPrenom"   value="#{customerCreateBean.lastName}" required="true" requiredMessage="Prénom obligatoire"/>
-                    <br/>
-                    <br/>
-                    <h:commandButton type="submit" value="créer client" actionListener="#{customerCreateBean.newCustomer}" action="createCustomerOk.xhtml"/> 
-                    <br/>
-                </h:form>
-            </h:panelGrid>
+            <f:view>
+                <h:panelGrid id="panel" columns="2" border="0" cellpadding="0" cellspacing="2">
+                    <h:form>
+                        Numero : <h:inputText   id="inputNumero"      value="#{customerCreateBean.number}"    required="true" requiredMessage="Numero obligatoire"/>
+                        nom : <h:inputText   id="inputNom"      value="#{customerCreateBean.firstName}"    required="true" requiredMessage="Nom obligatoire"/>
+                        prénom : <h:inputText   id="inputPrenom"   value="#{customerCreateBean.lastName}" required="true" requiredMessage="Prénom obligatoire"/>
+                        <br/>
+                        <br/>
+                        <h:commandButton type="submit" value="créer client" actionListener="#{customerCreateBean.newCustomer}" action="createCustomerOk.xhtml"/> 
+                        <br/>
+                    </h:form>
+                </h:panelGrid>
+            </f:view>
         </h:body>
     </f:view>
 </html>
