@@ -20,11 +20,7 @@ import javax.inject.Named;
 @RequestScoped
 public class CustomerBean {
 
-    private int number;
-    private String firstName;
-    private String lastName;
-    private ArrayList<Account> accList;
-
+   
     @Inject
     Services services;
 
@@ -35,47 +31,11 @@ public class CustomerBean {
         return services.getCustomersList();
     }
 
-    public Customer getCustomerById(Integer numberCustomer) {
-        return services.getCustomer(numberCustomer);
-    }
-
     public String editCustomer(Integer number) {
         CustomerEditBean customerEdit = Tools.FindBean("customerEditBean", CustomerEditBean.class);
         customerEdit.setCustomer(services.getCustomer(number));
         return "success";
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public ArrayList<Account> getAccList() {
-        return accList;
-    }
-
-    public void setAccList(ArrayList<Account> accList) {
-        this.accList = accList;
-    }
     
-
 }
