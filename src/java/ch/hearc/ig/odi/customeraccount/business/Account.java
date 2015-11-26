@@ -5,8 +5,8 @@ public class Account {
     Customer customer;
     private String number;
     private String name;
-    private double balance = 0;
-    private double rate = 0.001;
+    private double balance;
+    private double rate;
 
     /**
      *
@@ -19,6 +19,8 @@ public class Account {
         this.customer = customer;
         this.number = number;
         this.name = name;
+        this.rate = rate;
+        this.balance = 0;
         this.customer = customer;
     }
 

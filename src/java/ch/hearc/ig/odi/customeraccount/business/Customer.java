@@ -8,7 +8,7 @@ public class Customer {
     private int number;
     private String firstName;
     private String lastName;
-    private ArrayList<Account> accList = new ArrayList();
+    private ArrayList<Account> accList;
 
     /**
      *
@@ -21,6 +21,7 @@ public class Customer {
         this.number = number;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accList = new ArrayList();
     }
 
     public Customer() {
@@ -50,8 +51,8 @@ public class Customer {
         return accList;
     }
 
-    public void setAccList(Account accList) {
-        this.accList.add(accList);
+    public void setAccList(ArrayList<Account> accList) {
+        this.accList = accList;
     }
 
     /**

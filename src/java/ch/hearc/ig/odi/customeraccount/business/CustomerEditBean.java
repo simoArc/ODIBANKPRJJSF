@@ -23,12 +23,8 @@ public class CustomerEditBean {
     private int number;
     private String firstName;
     private String lastName;
-    private ArrayList<Account> accList;
-    private int numberAcount;
-    private String nameAccount;
-    private double balance = 0;
-    private double rate = 0.001;
-
+    private ArrayList<Account> accList = new ArrayList();
+    
     @Inject
     Services services;
 
@@ -73,44 +69,8 @@ public class CustomerEditBean {
         this.lastName = lastName;
     }
 
-    public List<Account> getAccList() {
+    public ArrayList<Account> getAccList() {
         return accList;
     }
-
-    public void setAccList(ArrayList<Account> accList) {
-        this.accList = accList;
-    }
-
-    public int getNumberAcount() {
-        return numberAcount;
-    }
-
-    public void setNumberAcount(int numberAcount) {
-        this.numberAcount = numberAcount;
-    }
-
-    public String getNameAccount() {
-        return nameAccount;
-    }
-
-    public void setNameAccount(String nameAccount) {
-        this.nameAccount = nameAccount;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double getRate() {
-        return rate;
-    }
-
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
+    
 }

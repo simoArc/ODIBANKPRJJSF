@@ -27,11 +27,11 @@
         <h:dataTable value="#{customerEditBean.accounts}" var="account">
             <h:column>    				
                 <f:facet name="header">Numero</f:facet>    				
-                    #{account.numberAccount}
+                    #{account.number}
             </h:column>
             <h:column>
                 <f:facet name="header">Libellé</f:facet>
-                    #{account.nameAccount}
+                    #{account.name}
             </h:column>
             <h:column>
                 <f:facet name="header">Solde</f:facet>
