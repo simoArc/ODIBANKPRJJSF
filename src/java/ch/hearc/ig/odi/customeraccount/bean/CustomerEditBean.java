@@ -45,11 +45,6 @@ public class CustomerEditBean {
         this.accList = customer.getAccList();
     }
 
-    public String detailsAccount(Integer id, String number) {
-        AccountDetailsBean accountDetail = Tools.FindBean("accountDetailsBean", AccountDetailsBean.class);
-        accountDetail.setAccount(services.getCustomer(id).getAccountByNumber(number));
-        return "success";
-    }
 
     public ArrayList<Account> getAccounts() {
         return accList;

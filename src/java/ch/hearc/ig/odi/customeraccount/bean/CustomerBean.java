@@ -23,7 +23,6 @@ import javax.inject.Named;
 @RequestScoped
 public class CustomerBean {
 
-   
     @Inject
     Services services;
 
@@ -39,5 +38,11 @@ public class CustomerBean {
         customerEdit.setCustomer(services.getCustomer(number));
         return "success";
     }
-    
+
+    public String detailsAccount(Integer id, String number) {
+        AccountDetailsBean accountDetail = Tools.FindBean("accountDetailsBean", AccountDetailsBean.class);
+        accountDetail.setAccount(services.getCustomer(id).getAccountByNumber(number));
+        return "ok";
+    }
+
 }
