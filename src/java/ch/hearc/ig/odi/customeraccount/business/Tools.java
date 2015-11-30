@@ -5,11 +5,7 @@
  */
 package ch.hearc.ig.odi.customeraccount.business;
 
-import ch.hearc.ig.odi.customeraccount.service.Services;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  *

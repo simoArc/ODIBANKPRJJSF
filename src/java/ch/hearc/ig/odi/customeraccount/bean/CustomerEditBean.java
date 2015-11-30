@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hearc.ig.odi.customeraccount.business;
+package ch.hearc.ig.odi.customeraccount.bean;
 
+import ch.hearc.ig.odi.customeraccount.business.Account;
+import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.service.Services;
 import java.util.ArrayList;
 import java.util.List;
