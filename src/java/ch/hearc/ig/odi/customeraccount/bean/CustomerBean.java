@@ -6,9 +6,10 @@
 package ch.hearc.ig.odi.customeraccount.bean;
 
 import ch.hearc.ig.odi.customeraccount.business.Customer;
+import ch.hearc.ig.odi.customeraccount.business.Customer;
+import ch.hearc.ig.odi.customeraccount.business.Tools;
 import ch.hearc.ig.odi.customeraccount.business.Tools;
 import ch.hearc.ig.odi.customeraccount.service.Services;
-import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -38,6 +39,5 @@ public class CustomerBean {
         customerEdit.setCustomer(services.getCustomer(number));
         return "success";
     }
-
     
 }
