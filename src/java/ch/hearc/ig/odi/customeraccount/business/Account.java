@@ -24,6 +24,9 @@ public class Account {
         this.customer = customer;
     }
 
+    public Account() {
+    }
+
     /**
      *
      * @param amount

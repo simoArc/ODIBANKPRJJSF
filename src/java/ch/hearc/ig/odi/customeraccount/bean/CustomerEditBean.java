@@ -7,6 +7,7 @@ package ch.hearc.ig.odi.customeraccount.bean;
 
 import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.business.Account;
+import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.business.Tools;
@@ -28,7 +29,7 @@ public class CustomerEditBean {
     private int number;
     private String firstName;
     private String lastName;
-    private ArrayList<Account> accList = new ArrayList();
+    private ArrayList<Account> accList;
 
     @Inject
     Services services;
@@ -38,19 +39,17 @@ public class CustomerEditBean {
     }
 
     public void setCustomer(Customer customer) {
-        accList = new ArrayList();
         this.number = customer.getNumber();
         this.firstName = customer.getFirstName();
         this.lastName = customer.getLastName();
         this.accList = customer.getAccList();
-        int var = accList.size();
     }
 
-   /* public String detailAccount(Integer number) {
-        AccountDetailsBean accountDetail = Tools.FindBean("AccountDetailsBean", AccountDetailsBean.class);
-        accountDetail.showAccount(services.getCustomer(number));
+    public String detailsAccount(Integer id, String number) {
+        AccountDetailsBean accountDetail = Tools.FindBean("accountDetailsBean", AccountDetailsBean.class);
+        accountDetail.setAccount(services.getCustomer(id).getAccountByNumber(number));
         return "success";
-    }*/
+    }
 
     public ArrayList<Account> getAccounts() {
         return accList;

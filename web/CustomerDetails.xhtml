@@ -33,7 +33,9 @@
                 <h:dataTable value="#{customerEditBean.accounts}" var="account">
                     <h:column>    				
                         <f:facet name="header">#{resrc.number}</f:facet>    				
-                            #{account.number}
+                        <h:commandLink id="idLink" action="#{customerEditBean.detailsAccount(customer.number, account.number)}" >
+                            <h:outputText value ="#{account.number}" />
+                        </h:commandLink>
                     </h:column>
                     <h:column>
                         <f:facet name="header">#{resrc.text}</f:facet>
