@@ -6,15 +6,12 @@
 package ch.hearc.ig.odi.customeraccount.bean;
 
 import ch.hearc.ig.odi.customeraccount.business.Account;
-import ch.hearc.ig.odi.customeraccount.business.Account;
-import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
-import ch.hearc.ig.odi.customeraccount.business.Customer;
-import ch.hearc.ig.odi.customeraccount.business.Tools;
 import ch.hearc.ig.odi.customeraccount.service.Services;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -23,59 +20,36 @@ import javax.inject.Named;
  * @author Simone Bissolotti
  */
 @Named(value = "customerEditBean")
-@RequestScoped
-public class CustomerEditBean {
-
-    private int number;
-    private String firstName;
-    private String lastName;
-    private ArrayList<Account> accList;
+@SessionScoped
+public class CustomerEditBean implements Serializable {
 
     @Inject
     Services services;
+    private Customer customer;
 
     public CustomerEditBean() {
 
     }
 
-    public void setCustomer(Customer customer) {
-        this.number = customer.getNumber();
-        this.firstName = customer.getFirstName();
-        this.lastName = customer.getLastName();
-        this.accList = customer.getAccList();
+    public String showCustomer(Customer customer) {
+        this.customer = customer;
+        return "displayCustomer";
     }
 
-
-    public ArrayList<Account> getAccounts() {
-        return accList;
+public List<Account> getAccounts(){
+        if(customer == null){
+            return new ArrayList();
+        }
+        
+        return new ArrayList(customer.getAccList());
     }
 
-    public int getNumber() {
-        return number;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public ArrayList<Account> getAccList() {
-        return accList;
+    public void setCustomer(Customer cust) {
+        this.customer = cust;
     }
 
 }

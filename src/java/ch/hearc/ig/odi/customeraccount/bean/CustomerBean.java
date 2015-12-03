@@ -6,10 +6,8 @@
 package ch.hearc.ig.odi.customeraccount.bean;
 
 import ch.hearc.ig.odi.customeraccount.business.Customer;
-import ch.hearc.ig.odi.customeraccount.business.Customer;
-import ch.hearc.ig.odi.customeraccount.business.Tools;
-import ch.hearc.ig.odi.customeraccount.business.Tools;
 import ch.hearc.ig.odi.customeraccount.service.Services;
+import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -19,9 +17,9 @@ import javax.inject.Named;
  *
  * @author Simone Bissolotti
  */
-@Named
+@Named(value = "customerBean")
 @RequestScoped
-public class CustomerBean {
+public class CustomerBean implements Serializable{
 
     @Inject
     Services services;
@@ -31,18 +29,6 @@ public class CustomerBean {
 
     public List<Customer> getCustomers() {
         return services.getCustomersList();
-    }
-
-    public String editCustomer(Integer number) {
-        CustomerEditBean customerEdit = Tools.FindBean("customerEditBean", CustomerEditBean.class);
-        customerEdit.setCustomer(services.getCustomer(number));
-        return "success";
-    }
-
-    public String detailsAccount(Integer id, String number) {
-        AccountDetailsBean accountDetail = Tools.FindBean("accountDetailsBean", AccountDetailsBean.class);
-        accountDetail.setAccount(services.getCustomer(id).getAccountByNumber(number));
-        return "ok";
     }
 
 }

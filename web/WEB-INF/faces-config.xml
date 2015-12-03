@@ -3,24 +3,21 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-
-    <managed-bean>
-        <managed-bean-name>CustomerBean</managed-bean-name>
-        <managed-bean-class>ch.hearc.ig.odi.customeraccount</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-    
-    <navigation-rule>
+ 
+        <navigation-rule>
         <from-view-id>/customerList.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>success</from-outcome>
-            <to-view-id>/CustomerDetails.xhtml</to-view-id>
+            <from-action>#{customerEditBean.showCustomer(customer)}</from-action>          
+            <from-outcome>displayCustomer</from-outcome>
+            <to-view-id>/customerDetails.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <navigation-rule>        
-        <from-view-id>/CustomerDetails.xhtml</from-view-id>
+    
+    <navigation-rule>
+        <from-view-id>/customerDetails.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>ok</from-outcome>
+            <from-action>#{accountDetailsBean.showAccount(account)}</from-action>          
+            <from-outcome>displayAccount</from-outcome>
             <to-view-id>/accountDetails.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

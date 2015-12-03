@@ -16,7 +16,7 @@
                 <h:dataTable value="#{customerBean.customers}" var="customer">
                     <h:column>    				
                         <f:facet name="header">#{resrc.number}</f:facet>    				
-                        <h:commandLink id="idLink" action="#{customerBean.editCustomer(customer.number)}" >
+                        <h:commandLink id="idLink" action="#{customerEditBean.showCustomer(customer)}" >
                             <h:outputText value ="#{customer.number}" />
                         </h:commandLink>
                     </h:column>
